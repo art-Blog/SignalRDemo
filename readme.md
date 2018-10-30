@@ -1,6 +1,7 @@
 # SignalR
 
 透過網頁聊天室的範例練習 SignalR
+![](./demo.png)
 
 ## nuget 安裝 SignalR 套件
 
