@@ -4,7 +4,10 @@ let $msgDom = $('#msg')
 let $room = $('#room')
 let $winform = $('#winform')
 let $btnJoin = $('#btnJoin')
+let $btnJoinMoneyIn = $('#btnJoinMoneyIn')
 let $btnLeave = $('#btnLeave')
+let $notice = $('#notice')
+let $btnNotice = $('#btnNotice')
 
 let hub = $.connection.chatHub
 
@@ -28,8 +31,15 @@ let joinRoomHandler = () => {
   $.connection.hub.qs = { team: roomName, name: userName }
   $.connection.hub.start()
 }
+let joinRoomMoneyInHandler = () => {
+  let roomName = 'moneyIn'
+  let userName = $name.val()
+  $.connection.hub.qs = { team: roomName, name: userName }
+  $.connection.hub.start()
+}
 
 $sendBtn.on('click', sendMsgHandler) // 綁定聊天按鈕事件
 $winform.on('click', showInfoHandler) // 綁定特殊按鈕事件
 $btnJoin.on('click', joinRoomHandler) // 加入聊天室
+$btnJoinMoneyIn.on('click', joinRoomMoneyInHandler) // 加入聊天室
 $btnLeave.on('click', leaveRoomHandler) //離開聊天室

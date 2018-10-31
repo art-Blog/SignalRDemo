@@ -9,30 +9,18 @@ namespace SingalRDemo.Hub
     [HubName("chatHub")]
     public class ChatHub : Microsoft.AspNet.SignalR.Hub
     {
+        private const string TeamName = "team";
+
         public override Task OnConnected()
         {
-            // 先取得使用者組別
-            var team = Context.QueryString["team"];
-
-            // 將連線加入該組別
-            return JoinRoom(team);
+            var team = Context.QueryString[TeamName];
+            return string.IsNullOrEmpty(team) ? base.OnConnected() : JoinRoom(team);
         }
 
         public override Task OnDisconnected(bool stopCalled)
         {
-            var team = Context.QueryString["team"];
-            try
-            {
-                return LeaveRoom(team);
-            }
-            catch (Exception e)
-            {
-                return null;
-            }
-            finally
-            {
-                Clients.Group(team).addMessage(Context.User.Identity.Name + " Leave.");
-            }
+            var team = Context.QueryString[TeamName];
+            return string.IsNullOrEmpty(team) ? base.OnDisconnected(stopCalled) : LeaveRoom(team);
         }
 
         public Task JoinRoom(string roomName)
@@ -55,10 +43,15 @@ namespace SingalRDemo.Hub
         /// <param name="msg">聊天訊息</param>
         public void SendMessage(string msg)
         {
-            // Clients.All.addMessage($"{msg} at {DateTime.Now.ToShortDateString()}");
-
-            var team = Context.QueryString["team"];
-            Clients.Group(team).addMessage($"[{team}]{msg}");
+            var team = Context.QueryString[TeamName];
+            if (string.IsNullOrEmpty(team))
+            {
+                Clients.All.addMessage($"{msg} at {DateTime.Now.ToShortDateString()}");
+            }
+            else
+            {
+                Clients.Group(team).addMessage($"[{team}]{msg}");
+            }
         }
 
         public void ShowInfo()
