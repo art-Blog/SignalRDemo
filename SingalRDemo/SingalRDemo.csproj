@@ -90,8 +90,10 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Scripts\jquery-1.6.4-vsdoc.js" />
-    <Content Include="chat.html" />
-    <Content Include="chat.js" />
+    <Content Include="v1\chat.html" />
+    <Content Include="v1\chat.js" />
+    <Content Include="v1\default.html" />
+    <Content Include="v1\default.js" />
     <Content Include="Scripts\jquery-1.6.4.js" />
     <Content Include="Scripts\jquery-1.6.4.min.js" />
     <Content Include="Scripts\jquery.signalR-2.3.0.js" />
@@ -99,7 +101,11 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Hub\LeaderHub.cs" />
     <Compile Include="Hub\MoneyInHub.cs" />
+    <Compile Include="Hub\NoticeHub.cs" />
+    <Compile Include="Hub\TeamOneHub.cs" />
+    <Compile Include="Hub\TeamTwoHub.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="startup.cs" />
   </ItemGroup>
@@ -111,6 +117,9 @@
     <None Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="v2\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
