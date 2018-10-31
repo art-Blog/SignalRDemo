@@ -29,7 +29,7 @@ namespace SignalRDemoWinForm
 
         private void ConnectionClosed()
         {
-            MessageBox.Show(@"您已離開聊天室");
+            //MessageBox.Show(@"您已離開聊天室");
         }
 
         private int y = 25;
@@ -61,7 +61,7 @@ namespace SignalRDemoWinForm
                 var fakeInfo = $"{label1.Text}的資訊：XXXXXXXXXXXXXXXXX";
                 _chatHub.Invoke("sendMessage", fakeInfo);
 
-                MessageBox.Show(@"有人正在查詢你的資料喔");
+                //MessageBox.Show(@"有人正在查詢你的資料喔");
             }
         }
 
@@ -84,11 +84,12 @@ namespace SignalRDemoWinForm
 
         private void btnConnect_Click(object sender, EventArgs e)
         {
-            MessageBox.Show(@"加入聊天室");
+            //MessageBox.Show(@"加入聊天室");
 
             _conn.Start().ContinueWith(task =>
             {
                 if (task.IsFaulted) return;
+                _chatHub.Invoke("JoinGroup", "moneyIn");
 
                 _chatHub.Invoke("sendMessage", "小叮噹加入了聊天室");
             });
