@@ -37,13 +37,15 @@ namespace SingalRDemo.Hub
 
         public Task JoinRoom(string roomName)
         {
-            var username = Context.QueryString["username"];
+            var username = Context.QueryString["name"];
             Groups.Add(Context.ConnectionId, roomName);
             return Clients.Group(roomName).addMessage($"{username} 加入 {roomName} 聊天室");
         }
 
         public Task LeaveRoom(string roomName)
         {
+            var username = Context.QueryString["name"];
+            Clients.Group(roomName).addMessage($"{username} 離開 {roomName} 聊天室");
             return Groups.Remove(Context.ConnectionId, roomName);
         }
 

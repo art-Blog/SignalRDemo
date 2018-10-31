@@ -13,7 +13,7 @@ hub.client.addMessage = msg => $room.append(`<li>${msg}</li>`)
 hub.client.showSomething = () => $room.append(`<li>正在查詢...</li>`)
 
 let sendMsgHandler = () => {
-  let username = $name.text()
+  let username = $name.val()
   let msg = $msgDom.val()
   hub.server.sendMessage(`${username}：${msg}`)
   $msgDom.val('')
@@ -23,7 +23,9 @@ let leaveRoomHandler = () => {
   $.connection.hub.stop()
 }
 let joinRoomHandler = () => {
-  $.connection.hub.qs = { team: 'moneyInXXX', name: 'art' }
+  let roomName = 'moneyCome'
+  let userName = $name.val()
+  $.connection.hub.qs = { team: roomName, name: userName }
   $.connection.hub.start()
 }
 
