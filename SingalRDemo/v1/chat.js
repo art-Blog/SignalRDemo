@@ -9,19 +9,19 @@ let $btnLeave = $('#btnLeave')
 let $notice = $('#notice')
 let $btnNotice = $('#btnNotice')
 
-let hub = $.connection.chatHub
+let team1Proxy = $.connection.chatHub
 
 //================Client Method======================================
-hub.client.addMessage = msg => $room.append(`<li>${msg}</li>`)
-hub.client.showSomething = () => $room.append(`<li>正在查詢...</li>`)
+team1Proxy.client.addMessage = msg => $room.append(`<li>${msg}</li>`)
+team1Proxy.client.showSomething = () => $room.append(`<li>正在查詢...</li>`)
 
 let sendMsgHandler = () => {
   let username = $name.val()
   let msg = $msgDom.val()
-  hub.server.sendMessage(`${username}：${msg}`)
+  team1Proxy.server.sendMessage(`${username}：${msg}`)
   $msgDom.val('')
 }
-let showInfoHandler = () => hub.server.showInfo()
+let showInfoHandler = () => team1Proxy.server.showInfo()
 let leaveRoomHandler = () => {
   $.connection.hub.stop()
 }
