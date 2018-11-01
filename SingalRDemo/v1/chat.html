@@ -1,0 +1,34 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>SignalR ChatRoom Demo</title>
+</head>
+
+<body>
+    <input id="btnJoin" type="button" value="Join Room moneyCome" />
+    <input id="btnJoinMoneyIn" type="button" value="Join Room moneyIn" />
+    <input id="btnLeave" type="button" value="Leave Room" />
+
+    <br />
+    <label for="name">Name:</label>
+    <input id="name" type="text" value="小小兵">
+
+    <input id="msg" value="" />
+    <input id="send" type="button" value="Send" />
+
+    <hr />
+    <h3>Chat Message</h3>
+    <ul id="room"></ul>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js'></script>
+    <!--需要先載入jQuery-->
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/signalr.js/2.3.0/jquery.signalR.min.js'></script>
+    <script src="http://localhost:22641/signalr/hubs"></script>
+    <!--指向根目錄的/signalr/hubs-->
+    <script src="chat.js"></script>
+</body>
+
+</html>

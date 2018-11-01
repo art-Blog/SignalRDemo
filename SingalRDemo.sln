@@ -11,6 +11,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "WinForm", "WinForm", "{2E71
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SignalRDemoWinForm", "SignalRDemoWinForm\SignalRDemoWinForm.csproj", "{5842270B-B379-446F-B6AF-D787E4F6EDC1}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Services", "Services", "{AE47D925-A66D-4F09-A262-27B8DCE069CD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SignalRService", "SignalRService\SignalRService.csproj", "{6A48D1AA-973D-4EE2-92CD-A0E99CA5C39F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -25,6 +29,10 @@ Global
 		{5842270B-B379-446F-B6AF-D787E4F6EDC1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5842270B-B379-446F-B6AF-D787E4F6EDC1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5842270B-B379-446F-B6AF-D787E4F6EDC1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6A48D1AA-973D-4EE2-92CD-A0E99CA5C39F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6A48D1AA-973D-4EE2-92CD-A0E99CA5C39F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6A48D1AA-973D-4EE2-92CD-A0E99CA5C39F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6A48D1AA-973D-4EE2-92CD-A0E99CA5C39F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -32,6 +40,7 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{4FCC2896-66B5-4340-8954-FC131313CD23} = {DD979A02-3819-413C-9BF2-68E478C38E40}
 		{5842270B-B379-446F-B6AF-D787E4F6EDC1} = {2E71FA54-1829-4520-B47F-DABE695CA6D8}
+		{6A48D1AA-973D-4EE2-92CD-A0E99CA5C39F} = {AE47D925-A66D-4F09-A262-27B8DCE069CD}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {5304F508-C60F-4EEF-B5B0-EBBC1BC33EE7}

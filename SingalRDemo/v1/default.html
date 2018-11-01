@@ -1,0 +1,31 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>SignalR Notice Demo</title>
+</head>
+
+<body>
+    <p>
+        公告的方式，是在按下按鈕的時候，先加入 hub ，然後不指定群組，在後端判斷沒有群組的話，就發通知給 hub 裡面的所有人
+    </p>
+    <label for="name">Name:</label>
+    <input id="name" type="text" value="公告測試人員">
+    <br />
+    <label for="notice"></label>
+    <textarea id="notice" style="width: 500px" rows=5></textarea>
+    <input id="btnNotice" type="button" value="公告" />
+    <ul id="room"></ul>
+
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js'></script>
+    <!--需要先載入jQuery-->
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/signalr.js/2.3.0/jquery.signalR.min.js'></script>
+    <script src="http://localhost:22641/signalr/hubs"></script>
+    <!--指向根目錄的/signalr/hubs-->
+    <script src="default.js"></script>
+</body>
+
+</html>
