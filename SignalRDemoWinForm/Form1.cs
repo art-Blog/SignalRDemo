@@ -23,7 +23,8 @@ namespace SignalRDemoWinForm
             _currectUser = GetUser();
             InitComboBox();
 
-            _conn = new HubConnection(SignalRurl);
+            var querystringData = new Dictionary<string, string> { { "id", "10001" } };
+            _conn = new HubConnection(SignalRurl, querystringData);
             // v1的測試hub
             _chatHub = _conn.CreateHubProxy("chatHub");
             _chatHub.On<string>("addMessage", (msg) =>
@@ -186,6 +187,13 @@ namespace SignalRDemoWinForm
             {
                 return Text;
             }
+        }
+
+        private void btnPM_Click(object sender, EventArgs e)
+        {
+            // 使用notice是因為每一個人都會登入，所以單一用戶組相互溝通，在這邊才找的到人
+            _hubs["notice"].Invoke("sendPrivateMsg", "10002", $"[PM-winform]{_currectUser.Name}：{textBox1.Text} at {DateTime.Now:f}");
+            textBox1.Text = string.Empty;
         }
     }
 }

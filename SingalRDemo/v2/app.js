@@ -1,8 +1,10 @@
 ﻿import * as tool from './common.js'
 ;(function() {
+  let $sendPrivateBtn = $('#sendPrivateBtn')
   let $sendBtn = $('#send')
   let $msgDom = $('#msg')
   let $room = $('#room')
+  let userId = $('#userId').val()
   // Data Binding to UI
   $('#name').val(data.name)
   $('#channel').text(data.channel.map(x => x.name).join('、'))
@@ -14,6 +16,8 @@
   }
 
   $.connection.hub.url = 'http://localhost:22641/signalr'
+  let config = { id: data.id }
+  $.connection.hub.qs = config
 
   $.connection.hub.start().done(function() {
     $sendBtn.on('click', function() {
@@ -23,6 +27,15 @@
       ).name
 
       currectProxy.server.send(`[${channelName}]${data.name}：${$msgDom.val()}`)
+      $msgDom.val('')
+    })
+
+    $sendPrivateBtn.on('click', function() {
+      // userId is a pk for user
+      $.connection.notice.server.sendPrivateMsg(
+        userId,
+        `[PM]${data.name}：${$msgDom.val()}`
+      )
       $msgDom.val('')
     })
   })

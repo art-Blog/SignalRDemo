@@ -34,6 +34,7 @@
             this.btnSend = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.btnPM = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnConnect
@@ -81,11 +82,22 @@
             this.comboBox1.Size = new System.Drawing.Size(121, 26);
             this.comboBox1.TabIndex = 4;
             // 
+            // btnPM
+            // 
+            this.btnPM.Location = new System.Drawing.Point(590, 46);
+            this.btnPM.Name = "btnPM";
+            this.btnPM.Size = new System.Drawing.Size(77, 28);
+            this.btnPM.TabIndex = 5;
+            this.btnPM.Text = "PM";
+            this.btnPM.UseVisualStyleBackColor = true;
+            this.btnPM.Click += new System.EventHandler(this.btnPM_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnPM);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.btnSend);
@@ -106,6 +118,7 @@
         private System.Windows.Forms.Button btnSend;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.Button btnPM;
     }
 }
 
