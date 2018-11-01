@@ -35,8 +35,7 @@ namespace SignalRDemoWinForm
             });
 
             // v2的測試Hub：應從DB中取得該人員參與的頻道，再加入Hub
-            var userId = 10005;
-            _hubs = GetVersion2TestHubs(userId);
+            _hubs = GetUserHubs(_currectUser.Channel);
 
             foreach (var currectHub in _hubs)
             {
@@ -70,24 +69,24 @@ namespace SignalRDemoWinForm
                 Channel = new List<ChannelInfo>
                 {
                     new ChannelInfo {Name = "team1", Id = 0},
-                    new ChannelInfo {Name = "team2", Id = 2},
-                    new ChannelInfo {Name = "team3", Id = 3}
+                    new ChannelInfo {Name = "leader", Id = 2},
+                    new ChannelInfo {Name = "notice", Id = 3}
                 }
             };
         }
 
-        private Dictionary<string, IHubProxy> GetVersion2TestHubs(int userId)
+        private Dictionary<string, IHubProxy> GetUserHubs(IEnumerable<ChannelInfo> channels)
         {
-            // 應該要依據userId從資料庫中取得使用者應該要加入的頻道有哪些再註冊
-            // 這邊模擬的是張三的頻道，只有team1、leader、notice
-            return new Dictionary<string, IHubProxy>
+            var result = new Dictionary<string, IHubProxy>();
+            foreach (var info in channels)
             {
-                {"chathub", _conn.CreateHubProxy("chathub")},
-                {"team1", _conn.CreateHubProxy("team1")},
-                //{"team2", _conn.CreateHubProxy("team2")},
-                {"leader", _conn.CreateHubProxy("leader")},
-                {"notice", _conn.CreateHubProxy("notice")}
-            };
+                result.Add(info.Name, _conn.CreateHubProxy(info.Name));
+            }
+
+            // 這邊是為了 V1 的測試
+            result.Add("chathub", _conn.CreateHubProxy("chathub"));
+
+            return result;
         }
 
         private void GenerateNewLabel(string msg)

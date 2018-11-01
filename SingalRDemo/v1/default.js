@@ -9,7 +9,6 @@ let hub = $.connection.chatHub
 
 //================Client Method======================================
 hub.client.addMessage = msg => $room.append(`<li>${msg}</li>`)
-hub.client.showSomething = () => $room.append(`<li>正在查詢...</li>`)
 
 let sendMsgHandler = () => {
   let username = $name.val()
