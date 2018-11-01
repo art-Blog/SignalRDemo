@@ -2,7 +2,7 @@
 using System.Threading.Tasks;
 using Microsoft.AspNet.SignalR.Hubs;
 
-namespace SingalRDemo.Hub
+namespace SignalRService.Hub
 {
     [HubName("oneuser")]
     public class OneUserHub : Microsoft.AspNet.SignalR.Hub<IClient>

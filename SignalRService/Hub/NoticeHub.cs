@@ -1,13 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 using Microsoft.AspNet.SignalR.Hubs;
 
-namespace SingalRDemo.Hub
+namespace SignalRService.Hub
 {
-    [HubName("leader")]
-    public class LeaderHub : Microsoft.AspNet.SignalR.Hub<IClient>
+    [HubName("notice")]
+    public class NoticeHub : Microsoft.AspNet.SignalR.Hub<IClient>
     {
         public void Send(string msg)
         {

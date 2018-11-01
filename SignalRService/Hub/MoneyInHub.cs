@@ -1,10 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Threading;
 using System.Threading.Tasks;
 using Microsoft.AspNet.SignalR.Hubs;
 
-namespace SingalRDemo.Hub
+namespace SignalRService.Hub
 {
     [HubName("chatHub")]
     public class ChatHub : Microsoft.AspNet.SignalR.Hub

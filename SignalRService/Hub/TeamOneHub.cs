@@ -1,10 +1,10 @@
 ﻿using System;
 using Microsoft.AspNet.SignalR.Hubs;
 
-namespace SingalRDemo.Hub
+namespace SignalRService.Hub
 {
-    [HubName("team2")]
-    public class TeamTwoHub : Microsoft.AspNet.SignalR.Hub<IClient>
+    [HubName("team1")]
+    public class TeamOneHub : Microsoft.AspNet.SignalR.Hub<IClient>
     {
         public void Send(string msg)
         {

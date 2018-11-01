@@ -1,6 +1,6 @@
 ﻿using System.Threading.Tasks;
 
-namespace SingalRDemo.Hub
+namespace SignalRService.Hub
 {
     public interface IClient
     {

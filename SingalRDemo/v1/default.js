@@ -1,4 +1,6 @@
-﻿let $name = $('#name')
+﻿$.connection.hub.url = 'http://localhost:22641/signalr'
+
+let $name = $('#name')
 let $notice = $('#notice')
 let $btnNotice = $('#btnNotice')
 let $room = $('#room')

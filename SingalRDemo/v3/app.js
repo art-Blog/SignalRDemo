@@ -15,9 +15,9 @@
     currectProxy.client.received = msg => $room.append(`<li>${msg}</li>`)
   }
 
-  // add querystring
-  let config = { id: data.id }
-  $.connection.hub.qs = config
+  $.connection.hub.url = 'http://localhost:22641/signalr'
+  $.connection.hub.qs = { id: data.id }
+
   $.connection.hub.start().done(function() {
     $sendBtn.on('click', function() {
       let currectProxy = tool.getProxy($('#channelId').val())
