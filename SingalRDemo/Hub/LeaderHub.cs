@@ -7,11 +7,11 @@ using Microsoft.AspNet.SignalR.Hubs;
 namespace SingalRDemo.Hub
 {
     [HubName("leader")]
-    public class LeaderHub : Microsoft.AspNet.SignalR.Hub
+    public class LeaderHub : Microsoft.AspNet.SignalR.Hub<IClient>
     {
         public void Send(string msg)
         {
-            Clients.All.received($"{msg} at {DateTime.Now:f}");
+            Clients.All.Received($"{msg} at {DateTime.Now:f}");
         }
     }
 }

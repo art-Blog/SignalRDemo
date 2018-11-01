@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>單用戶組測試</title>
+</head>
+
+<body>
+    <label for="name">Name:</label>
+    <input id="name" type="text" value="" readonly />
+
+    <select id="channelId">
+        <option value="0">oneuser</option>
+    </select>
+
+    <input id="msg" value="" />
+    <input id="send" type="button" value="Send" />
+
+    <label for="userId">密語對象Id:</label>
+    <input id="userId" type="text" value="10007" />
+    <input id="sendPrivateBtn" type="button" value="PM" />
+
+    <hr />
+    <h3 id="channel">Channel</h3>
+    <ul id="room"></ul>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js'></script>
+    <!--需要先載入jQuery-->
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/signalr.js/2.3.0/jquery.signalR.min.js'></script>
+    <script src='/signalr/hubs'></script>
+    <!--指向根目錄的/signalr/hubs-->
+    <script src="data3.js"></script>
+    <script src="app.js" type="module"></script>
+</body>
+
+</html>

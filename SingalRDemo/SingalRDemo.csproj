@@ -111,9 +111,11 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Hub\IClient.cs" />
     <Compile Include="Hub\LeaderHub.cs" />
     <Compile Include="Hub\MoneyInHub.cs" />
     <Compile Include="Hub\NoticeHub.cs" />
+    <Compile Include="Hub\OneUserHub.cs" />
     <Compile Include="Hub\TeamOneHub.cs" />
     <Compile Include="Hub\TeamTwoHub.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
