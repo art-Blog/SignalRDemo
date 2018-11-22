@@ -90,6 +90,14 @@
     <Content Include="v2\person2.html" />
     <Content Include="v2\person3.html" />
     <Content Include="v2\person4.html" />
+    <Content Include="v4\app.js" />
+    <Content Include="v4\common.js" />
+    <Content Include="v4\data.js" />
+    <Content Include="v4\data2.js" />
+    <Content Include="v4\data3.js" />
+    <Content Include="v4\index.html" />
+    <Content Include="v4\index2.html" />
+    <Content Include="v4\index3.html" />
     <Content Include="v3\app.js" />
     <Content Include="v3\common.js" />
     <Content Include="v3\data.js" />

@@ -82,6 +82,8 @@
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
     <Compile Include="Hub\IClient.cs" />
+    <Compile Include="Hub\Base\BaseHub.cs" />
+    <Compile Include="Hub\Implement\v4\v4Hub.cs" />
     <Compile Include="Hub\LeaderHub.cs" />
     <Compile Include="Hub\MoneyInHub.cs" />
     <Compile Include="Hub\NoticeHub.cs" />
@@ -90,6 +92,7 @@
     <Compile Include="Hub\TeamTwoHub.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Provider\CustomUserIdProvider.cs" />
     <Compile Include="Startup.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
