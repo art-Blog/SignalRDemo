@@ -10,6 +10,6 @@
 
 [b1]: https://dotblogs.com.tw/artblog/2018/10/30/signalr-website-winform-example
 [b2]: https://dotblogs.com.tw/artblog/2018/10/31/signalr-website-winform-example-2
-[b3]: https://dotblogs.com.tw/artblog/2018/10/31/signalr-website-winform-example-3
-[b4]: https://dotblogs.com.tw/artblog/2018/10/31/signalr-website-winform-example-4
-[b5]: https://dotblogs.com.tw/artblog/2018/10/31/signalr-website-winform-example-5
+[b3]: https://dotblogs.com.tw/artblog/2018/11/01/signalr-website-winform-example-3
+[b4]: https://dotblogs.com.tw/artblog/2018/11/22/signalr-website-winform-example-4
+[b5]: https://dotblogs.com.tw/artblog/2018/11/22/signalr-website-winform-example-5
